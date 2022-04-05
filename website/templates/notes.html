@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %} Notes {% endblock %}
+{% block content %}
+<h1 align = "Center">Notes</h1>
+<form method ="POST">
+    <div class="form-floating">
+        <textarea name = "note" id = "note" class="form-control"></textarea>
+    </div>
+    <br>
+    <div aligen = "Center">
+        <button type="submit" class="btn btn-primary"> Add Note </button>
+    </div>
+</form>
+<br>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Notes</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        {% for x in user.notes  %}
+        <tbody>
+          <tr>
+            <td>{{ x.data }}</td>
+            <td>
+              <a href="/delete/{{ x.id }}" class="button" >Delete</a>
+              <a href="/update/{{ x.id }}" class="button" >Update</a>
+            </td>
+          </tr>
+        </tbody>
+        {%endfor%}
+    </table>
+</div>
+
+
+{% endblock %}

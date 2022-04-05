@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title%}update{% endblock %}
+{% block content %}
+<h1 align = "Center">Update</h1>
+<form method ="POST" >
+
+    <div class="mb-3">
+        <label for="note" class="form-label">Your note</label>
+        <input type="text" class="form-control" id="note" name="note" value= "{{v.data}}" />
+    </div>
+    <br>
+    <div aligen = "Center">
+        <button type="submit" class="btn btn-primary"> Update Note </button>
+    </div>
+</form>
+{% endblock %}
